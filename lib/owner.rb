@@ -41,6 +41,7 @@ class Owner
   def buy_dog(name)
     new_dog = Dog.new(name, self)
   end
+#creates a new intsance of dog and passes self (the owner upon which the method is called) as argument, since the dog and cat classes expect that in their initialize: def initialize(name, owner)
 
   def walk_dogs
     self.dogs.each {|dog|dog.mood = "happy"}
@@ -59,15 +60,9 @@ class Owner
       pet.owner = nil
     end
   end
+  #this creates a variable to group all the cat and dog instances that are associated with the owner that the method is called on. Then it iterates over each and reassings the mood, and nils the ownership
 
   def list_pets
     "I have #{self.dogs.count} dog(s), and #{self.cats.count} cat(s)."
   end
-
-
-
-    
-
-
-
 end
