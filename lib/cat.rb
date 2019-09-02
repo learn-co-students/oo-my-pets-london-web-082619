@@ -1,3 +1,24 @@
+require "pry"
+
+require_relative "dog.rb"
+require_relative "cat.rb"
+
 class Cat
-  # code goes here
-end
+
+    attr_accessor :owner, :mood
+    attr_reader :name
+
+    @@all = []
+
+    def initialize(name, owner)
+      @name = name
+      @owner = owner
+      @mood = "nervous"
+      @@all << self
+    end
+
+    def self.all
+      @@all
+    end
+
+  end
